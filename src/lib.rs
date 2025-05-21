@@ -10,7 +10,6 @@ const BASE_URL: &str = "prices.runescape.wiki/api/v1";
 
 pub struct Client {
     http_client: reqwest::Client,
-    api_endpoint: ApiEndpoint,
     base_url: String,
 }
 
@@ -26,7 +25,7 @@ impl Client {
             .user_agent(user_agent.as_ref())
             .build()?;
         let base_url = format!("https://{}/{}", BASE_URL, api_endpoint);
-        Ok(Self { http_client, api_endpoint, base_url })
+        Ok(Self { http_client, base_url })
     }
 }
 
@@ -58,7 +57,6 @@ mod tests {
         let client = Client::try_new(user_agent, api_endpoint);
         assert!(client.is_ok());
         let client = client.unwrap();
-        assert_eq!(client.api_endpoint, api_endpoint);
         assert_eq!(client.base_url, format!("https://{}/{}", BASE_URL, api_endpoint));
     }
 }
