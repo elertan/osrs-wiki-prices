@@ -2,6 +2,11 @@
 name = "osrs-wiki-prices"
 version = "0.1.0"
 edition = "2024"
+license-file = "LICENSE"
+readme = "README.md"
+repository = "https://github.com/elertan/osrs-wiki-prices"
+description = "Rust client for the OSRS Wiki Prices API"
+keywords = ["api", "rest", "osrs", "wiki", "prices"]
 
 [dependencies]
 tokio = { version = "1.45.0", features = ["macros", "rt-multi-thread"] }
