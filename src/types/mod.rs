@@ -1,6 +1,6 @@
 use serde::{de, Deserialize, Deserializer};
 
-#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash)]
+#[derive(Debug, Clone, Copy, PartialEq, Eq, Hash, serde::Serialize)]
 pub struct ItemId(u32);
 
 impl ItemId {
